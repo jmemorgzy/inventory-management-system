@@ -1,3 +1,13 @@
+*,
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Cascadia Code", 'Roboto', sans-serif;
+    font-size: 16px;
+    color: #333;
+}
+
 h1 {
-    color: black;
+    color: blue;
 }
