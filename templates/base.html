@@ -31,6 +31,13 @@
                             Inventory
                         </a>
                     </li>
+                    {% if user.is_superuser %}
+                        <li class="nav-item">
+                            <a class="nav-link" href="/admin">
+                                Admin
+                            </a>
+                        </li>
+                    {% endif %}
                     <li class="nav-item">
                         <a class="nav-link" href="{% url 'logout' %}">Log Out</a>
                     </li>
@@ -66,11 +73,11 @@
                             </form>
                         </div>
                     </div>
-                    <div class="row">
+                    {% comment %} <div class="row">
                         <div class="col d-flex justify-content-center mt-2">
                             <a href="register/">Register</a>
                         </div>
-                    </div>
+                    </div> {% endcomment %}
                 </div>
             </div>
         {% endblock login_or_register %}
