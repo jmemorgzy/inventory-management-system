@@ -1,16 +1,20 @@
+{% extends "base.html" %}
+
 <h3>Register here</h3>
 <hr>
 
-<form action="" method="POST">
-    {% csrf_token %}
-    {% for field in form %}
-        <div>
-            <p>{{ field.label }}: <br> {{ field }}</p>
-            <p> {{ field.help_text }} </p>
-            {% for error in field.errors %}
-                <small style="color: red">{{ error }}</small>
-            {% endfor %}
-        </div>
-    {% endfor %}
-    <button type="submit">Register</button>
-</form>
+{% block login_or_register %}
+    <form action="" method="POST">
+        {% csrf_token %}
+        {% for field in form %}
+            <div>
+                <p>{{ field.label }}: <br> {{ field }}</p>
+                <p> {{ field.help_text }} </p>
+                {% for error in field.errors %}
+                    <small style="color: red">{{ error }}</small>
+                {% endfor %}
+            </div>
+        {% endfor %}
+        <button type="submit">Register</button>
+    </form>
+{% endblock login_or_register %}
